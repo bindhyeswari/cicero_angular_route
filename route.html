@@ -13,6 +13,9 @@
             $routeProvider.when('/search',  {
                 templateUrl: 'partials/_search.html',
                 controller: 'MyController'
+            }).when('/users/:username', {
+                templateUrl: 'partials/_user.html',
+                controller: 'UserController'
             }).otherwise({
                 redirectTo: '/search'
             });
