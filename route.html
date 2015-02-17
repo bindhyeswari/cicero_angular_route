@@ -2,13 +2,23 @@
 <html ng-app="myapp">
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="base.css"/>
     <title>Angular Route</title>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="controllers.js"></script>
     <script>
-        angular.module('myapp', []);
+        angular.module('myapp', ['myapp.controllers', 'ngRoute']).config(function ($routeProvider) {
+            $routeProvider.when('/search',  {
+                templateUrl: 'partials/_search.html',
+                controller: 'MyController'
+            }).otherwise({
+                redirectTo: '/search'
+            });
+        });
     </script>
 </head>
 <body>
-
+    <div ng-view></div>
 </body>
 </html>
