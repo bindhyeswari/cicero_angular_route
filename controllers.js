@@ -10,6 +10,6 @@ angular.module('myapp.controllers', ['myapp.services']).controller('MyController
     };
 }).controller('UserController', function ($scope, Github, $routeParams) {
     Github.getUser($routeParams.username).success(function (data) {
-        console.log(data);
+        $scope.user = data;
     });
 });
