@@ -4,7 +4,7 @@
     <ul>
         <li ng-repeat="item in items">
             <a href="{{item.html_url}}" target="_blank">{{item.full_name}}</a>
-            <div><a href="#/user/{{item.owner.login}}">Show User Details ... </a></div>
+            <div><a href="#/users/{{item.owner.login}}">Show User Details ... </a></div>
             <div>Size: {{item.size}} bytes</div>
             <div>Score: {{item.score}}</div>
         </li>
